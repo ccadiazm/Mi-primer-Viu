@@ -1,14 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>carolina</title>
-</head>
-<h1>bienvenidos</h1>
+<html>
+    <head>
+        <title>Mi Primer ViuJs</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    </head>
+    <body>
+        <!--VISTA-->
+        <div id="app">
+            <table border="1">
+                <tr> 
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>RUT</th>
+                    <th>FECHA</th>
+                    <th>EDAD</th>
+                </tr>
+                <tr v-for="persona of personas">
+                    <td>{{persona["nombre"]}}</td>
+                    <td>{{persona["apellido"]}}</td>
+                    <td>{{persona["rut"]}}</td>
+                    <td>{{persona["fecha"]}}</td>
+                    <td>{{persona["edad"]}}</td>
+                </tr>
+            </table>
 
-<body>
-    
-</body>
+        </div>
+        <script>
+            const app =new Vue({
+                //modelo
+                el:'#app',
+                data:{
+                    personas:[
+                    {
+       "nombre":"José",
+       "apellido":"Pérez",
+       "rut":"123456-2",
+       "fecha":"12 abril 1964",
+       "edad":"52"
+    },
+    {
+       "nombre":"María",
+       "apellido":"Rodriguez",
+       "rut":"654321-1",
+       "fecha":"30 nov 1990",
+       "edad":"29"
+    },
+    {
+       "nombre":"Manuel",
+       "apellido":"Patiño",
+       "rut":"14223453-6",
+       "fecha":"02 dic 1959",
+       "edad":"60"
+    }
+                    ]
+                   
+                },
+              
+                       
+            });
+        </script>
+    </body>
 </html>
